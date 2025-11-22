@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Contact – SpiceCraft Masala</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><div class="logo"></div><div>SpiceCraft</div></a>
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="actions">
+        <a class="btn-ghost" href="cart.html">Cart <span class="cart-count" style="margin-left:6px"></span></a>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+    <div class="container mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="h2">Contact Us</h1>
+      <div class="split">
+        <div>
+          <form class="form" id="contactForm" novalidate>
+            <input class="input" type="text" id="name" placeholder="Your Name" required>
+            <input class="input" type="email" id="email" placeholder="Email Address" required>
+            <input class="input" type="tel" id="phone" placeholder="Phone (optional)">
+            <textarea class="input" id="message" rows="5" placeholder="Your Message" required></textarea>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <div id="formMsg" class="small muted"></div>
+          </form>
+        </div>
+        <div class="image">
+          <iframe title="Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160996895!2d72.74110099411338!3d19.08219783937421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c630b0ecb6df%3A0x2c6a6f0c2e20f8a!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+      <div class="grid grid-3">
+        <div class="card"><div class="card-body"><div class="card-title">Address</div><div class="muted small">SpiceCraft Foods, Andheri East, Mumbai</div></div></div>
+        <div class="card"><div class="card-body"><div class="card-title">Phone</div><div class="muted small">+91 98765 43210</div></div></div>
+        <div class="card"><div class="card-body"><div class="card-title">Email</div><div class="muted small">hello@spicecraft.in</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-top">
+      <div>
+        <div class="brand"><div class="logo"></div><div>SpiceCraft</div></div>
+        <p class="muted">Premium Indian spices crafted with care.</p>
+      </div>
+      <div>
+        <div class="card-title">Quick Links</div>
+        <div class="spacer"></div>
+        <a href="products.html">Products</a><br>
+        <a href="about.html">About</a><br>
+        <a href="contact.html">Contact</a><br>
+        <a href="cart.html">Cart</a>
+      </div>
+      <div>
+        <div class="card-title">Connect</div>
+        <div class="spacer"></div>
+        <a href="#">Instagram</a><br>
+        <a href="#">Twitter</a><br>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">© 2025 SpiceCraft Foods. All rights reserved.</div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const msg = document.getElementById('formMsg');
+      if(!name || !email || !message){
+        msg.textContent = 'Please fill in all required fields.'; return;
+      }
+      const emailOk = /[^@\s]+@[^@\s]+\.[^@\s]+/.test(email);
+      if(!emailOk){ msg.textContent = 'Please enter a valid email address.'; return; }
+      msg.textContent = 'Thanks! Your message has been sent.';
+      this.reset();
+    })
+  </script>
+</body>
+</html>
